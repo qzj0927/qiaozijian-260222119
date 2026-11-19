@@ -1,0 +1,41 @@
+# ---- 构建产物（任务书 2.4：不得提交 build/ 与编译产物） ----
+build/
+build_*/
+build-*/
+!build/.gitkeep
+*.o
+*.d
+*.a
+*.lib
+*.elf
+*.bin
+*.hex
+*.map
+*.su
+*.lst
+compile_commands.json
+.cache/
+.vscode/ipch/
+
+# ---- 主机端单元测试产物 ----
+build_host/
+
+# ---- IDE / 系统垃圾文件 ----
+.vs/
+.idea/
+*.uvprojx
+*.uvoptx
+*.ewp
+*.eww
+.DS_Store
+Thumbs.db
+desktop.ini
+*~
+*.bak
+*.swp
+
+# ---- 说明 ----
+# 1) 故意不忽略 .vscode/：任务书 2.2 要求"VS Code 配置一并提交"，
+#    但请只提交 settings.json / launch.json / tasks.json / extensions.json，
+#    不要提交 .vscode/ipch 这类缓存。
+# 2) 不忽略 .ioc：任务书 2.1 要求 .ioc 必须提交，审查时会用它重新生成工程对照。
