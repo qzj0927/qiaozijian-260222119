@@ -39,3 +39,6 @@ desktop.ini
 #    但请只提交 settings.json / launch.json / tasks.json / extensions.json，
 #    不要提交 .vscode/ipch 这类缓存。
 # 2) 不忽略 .ioc：任务书 2.1 要求 .ioc 必须提交，审查时会用它重新生成工程对照。
+
+# CubeMX 每次生成都会重写，且含本机路径
+*.mxproject
