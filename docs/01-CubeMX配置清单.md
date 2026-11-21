@@ -16,7 +16,7 @@
 | RCC → HSE | **Crystal/Ceramic Resonator** | 板载 25MHz（若你的板是 8MHz，见 2.2） |
 | RCC → LSE | Disable | 用不到 |
 | GPIO → PC13 | Output Push Pull, Low speed, No pull | 板载 LED，低电平点亮 |
-| GPIO → PB12 | Input, **Pull-up** | 外接按键到 GND，按下为低 |
+| GPIO → PA0 | Input, **Pull-down** | 板载 KEY，按下接 3V3，高有效 |
 
 ### 1.2 Timers
 
