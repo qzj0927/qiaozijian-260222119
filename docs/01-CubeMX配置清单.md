@@ -25,8 +25,8 @@
 | 参数 | 值 |
 |---|---|
 | Clock Source | Internal Clock |
-| Channel1 | PWM Generation CH1（PB4） |
-| Channel2 | PWM Generation CH2（PB5） |
+| Channel1 | PWM Generation CH1（PA6） |
+| Channel2 | PWM Generation CH2（PA7） |
 | Channel3 | PWM Generation CH3（PB0） |
 | Channel4 | PWM Generation CH4（PB1） |
 | Prescaler | **83** |
