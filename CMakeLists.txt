@@ -66,3 +66,6 @@ target_link_libraries(${CMAKE_PROJECT_NAME}
 
     # Add user defined libraries
 )
+
+# ---- 用户代码（application/ 与 bsp/）----
+include(${CMAKE_CURRENT_LIST_DIR}/cmake/app_sources.cmake)
