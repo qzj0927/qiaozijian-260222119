@@ -13,10 +13,12 @@ target_sources(${CMAKE_PROJECT_NAME} PRIVATE
     # --- application/ 任务与行为层 ---
     ${APP_ROOT}/application/app_config.c
     ${APP_ROOT}/application/app_servo.c
+    ${APP_ROOT}/application/app_motion.c
     ${APP_ROOT}/application/app_main.c
 
     # --- components/ 可复用组件 ---
     ${APP_ROOT}/components/servo_map.c
+    ${APP_ROOT}/components/motion_profile.c
 
     # --- bsp/ 板级驱动 ---
     ${APP_ROOT}/bsp/bsp_gpio.c

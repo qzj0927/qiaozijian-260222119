@@ -18,6 +18,10 @@
 #define APP_PWM_SAFE_US     1500u      /* 上电先给中位，避免猛冲 */
 #define APP_PWM_PERIOD_US  20000u      /* 50Hz */
 
+/* 运动学限制（T2）：SG90 空载约 600°/s，带臂取 40% 稳定不丢步 */
+#define APP_MAX_SPEED_DPS    240.0f
+#define APP_MAX_ACCEL_DPS2   720.0f
+
 /** 单轴标定参数 */
 typedef struct {
     uint16_t pulse_min_us;    /**< 实测稳定下限 */
