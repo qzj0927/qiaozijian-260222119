@@ -12,7 +12,7 @@
 | 项目 | 设置 | 说明 |
 |---|---|---|
 | SYS → Debug | **Serial Wire** | 只留 SWD，释放 PB3/PB4（本工程没用到，但保留灵活性） |
-| SYS → Timebase Source | SysTick | HAL 时基；控制节拍另用 TIM6 |
+| SYS → Timebase Source | SysTick | HAL 时基；控制节拍另用 TIM2 |
 | RCC → HSE | **Crystal/Ceramic Resonator** | 板载 25MHz（若你的板是 8MHz，见 2.2） |
 | RCC → LSE | Disable | 用不到 |
 | GPIO → PC13 | Output Push Pull, Low speed, No pull | 板载 LED，低电平点亮 |
@@ -40,15 +40,21 @@
 > 若评审要求更细分辨率：PSC 改 41 → 2.38MHz（0.42µs/tick），ARR 改 47618。
 > 此时 `bsp_pwm_set_pulse()` 内部要把 µs 换算成 tick，注释里有说明。
 
-**TIM6 —— 1ms 控制节拍**
+**TIM2 —— 1ms 控制节拍**
+
+> ⚠️ **F401CC 没有 TIM6/TIM7**。ST 数据手册：本系列是「1 个高级定时器 + 7 个通用定时器
+> （TIM2/3/4/5/9/10/11）+ 2 个看门狗」，基本定时器 TIM6/TIM7 未集成。
+> 所以 CubeMX 里根本看不到 TIM6 —— 这是芯片差异，不是配置错误。
+> 1ms 节拍用 **TIM2**（32 位，本工程未占用）；若以后要拿 TIM2 做编码器接口（A2），
+> 可换成 **TIM11**（16 位、单通道，只要 1ms 更新中断，同样够用）。
 
 | 参数 | 值 |
 |---|---|
-| Activated | ✔ |
+| Clock Source | Internal Clock |
 | Prescaler | 83 |
 | Counter Period | 999 |
 | auto-reload preload | Enable |
-| NVIC → TIM6 global interrupt | **Enable**，Preemption Priority = 2 |
+| NVIC → TIM2 global interrupt | **Enable**，Preemption Priority = 2 |
 
 ### 1.3 Connectivity
 
