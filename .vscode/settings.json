@@ -1,0 +1,12 @@
+{
+    "cmake.useCMakePresets": "always",
+    "cmake.configureOnOpen": false,
+    "C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+    "files.encoding": "utf8",
+    "files.eol": "\n",
+    "files.associations": {
+        "*.h": "c"
+    },
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true
+}

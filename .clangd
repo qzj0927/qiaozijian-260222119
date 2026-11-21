@@ -1,0 +1,6 @@
+CompileFlags:
+  # 任务书 2.2：打开 CMAKE_EXPORT_COMPILE_COMMANDS，.clangd 指向 build/Debug
+  CompilationDatabase: build/Debug
+  Add:
+    - -std=c11
+    - -Wall

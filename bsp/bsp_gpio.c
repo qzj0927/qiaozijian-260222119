@@ -79,3 +79,8 @@ bool bsp_key_pressed(void)
     }
     return false;
 }
+
+bool bsp_key_is_down(void)
+{
+    return s_key_stable;
+}
